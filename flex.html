@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex布局</title>
+  <style>
+    /* flex布局是弹性布局
+    定义：分为容器和项目任何一个容器都可以指定为flex布局，容器内部的元素 默认成为容器的项目元素
+    注意点： 使用flex布局之后 内部项目的float clear vertical-again将失效
+    容器属性：
+    flex-direction指定主轴的方向 
+        属性值 row（水平方向,从左到右）
+              row-reverse（水平方向，从右到左）
+              column（垂直方向，从上倒下）
+              column-reverse（垂直方向，从下到上）
+
+    flex-wrap指定项目的换行方式
+        属性址 wrap换行
+              nowrap不换行
+              wrap-reverse换行 第一行在下方
+     flex-flow前面两者的缩写
+     justify-content 在主轴的对其方式
+        属性值 center剧中对其
+              flex-start左对齐
+              flex-end右对齐
+              space-between两端对齐 项目间隔相等
+              space-around每段项目两边的间隔相等 所以项目间的间隔比项目与边框之间的间隔大一倍
+
+    align-items 在交叉轴上的对齐方式
+        属性值 center 居中
+              flex-start 交叉轴起点对齐
+              flex-end 交叉轴制高点对齐
+              baseline 项目第一行文字的基线对齐
+              stretch 撑大 如果项目没有设置高度 或者设置为auto 那么项目将占满容器高度
+
+    align-content 属性定义了多根轴线的对齐方式 只有一根轴线时 该属性不生效
+        属性值 center 居中
+              flex-start 交叉轴起点对齐
+              flex-end 交叉轴终点对齐
+              stretch 默认值 轴线占满交叉轴
+              space-betweed 轴线两段对齐 中间间隔平均分布
+              space-around 轴线两边的间隔相等 因此 中间项目之间的间隔 是 边上项目距离边框距离的两倍
+
+    项目属性
+      order 定义项目的排序 数值越小越靠前
+      flex-grow 项目放大的比例
+      flex-shrink 项目的缩小比例
+      flex-basis 项目本身的大小flex 是前三者的简写
+                flex none 值为 0 0 auto ， auto 1 1 auto
+      align-self 允许单个项目有于其他项目不一样的对齐方式
+     */
+
+    .container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: baseline;
+      width: 390px;
+      height: 300px;
+      background-color: aquamarine;
+    }
+    .item{
+      width: 100px;
+      height: 100px;
+      background-color: burlywood;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item" style="align-self: center;">item5</div>
+  </div>
+</body>
+</html>
+
+<!-- 总结
+flex 是弹性布局 为布局提供更灵活的方式
+分为容器属性于项目属性
+容器属性包括
+flex-direction 指定主轴的方向 属性值有  row 默认 水平方向 起点在左侧
+                                    row-reverse 水平方向 起点在右侧
+                                    column 垂直方向 起点在上方
+                                    column-reverse 垂直方向 起点在下方
+flex-wrap 指定项目在轴线上的对齐方式 属性值 nowrap 默认值不换行
+                                      wrap 换行 一行排不下时换行
+                                      wrap-reverse 换行 第一行在下方
+flex-flow 这是前两者属性的缩写 不做介绍
+justify-content 指定项目在主轴上的对齐方式 属性值有 center 居中对齐
+                                              flex-start 左对齐
+                                              flex-end 右对齐
+                                              space-between 两段对齐 项目间间隔相等
+                                              space-around 项目两边间隔相等 因此 中间项目间隔是边上项目距离边框距离的两倍
+align-items 定义项目在交叉轴上的对齐方式 属性值有   cneter 居中对齐
+                                              flex-staer 交叉轴起点对齐
+                                              flex-end 交叉轴终点对齐
+                                              baseline 基线对齐
+                                              stretch 如果项目 没有设置高度或者设置为auto 那么项目将占满交叉轴
+align-conent 项目定义多根轴线的对齐方式 只有一根不生效 属性有 center 居中
+                                                      stretch 默认占满整个交叉轴
+                                                      flex-start 交叉轴起点
+                                                      flex-end 交叉轴种地哪
+                                                      space-betweed 两端对齐中间平分
+                                                      space-around 项目两边间距相等
+项目属性
+order 决定项目的排序 数值越小越靠前
+flex-grow 项目的扩展比
+flex-shrink 项目的收缩比
+flex-basis 项目本身的大小
+flex 前三者的缩写 有两个快捷址 none 值为 0 0 auto auto 1 1 auto
+align-self 允许单个项目有于其他项目不同的排列方式 默认值auto 表示继承父元素的align-items 属性 没有则 为stretch
+                                                    
+
+-->

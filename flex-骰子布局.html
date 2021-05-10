@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>骰子布局</title>
+  <style>
+    body{
+      background-color: black;
+      display: flex;
+    }
+    .container{
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 2px;
+      padding: 5px;
+    }
+    .active{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .active2{
+      justify-content: space-between;
+      display: flex;
+    }
+    .active3{
+      justify-content: space-between;
+      display: flex;
+    }
+    .item{
+      height: 15px;
+      width: 15px;
+      border-radius: 15px;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container active">
+    <div class="item"></div>
+  </div>
+  <div class="container active2">
+    <div class="item"></div>
+    <div class="item" style="align-self: flex-end;"></div>
+  </div>
+  <div class="container active2">
+    <div class="item"></div>
+     <div class="item" style="align-self: center;"></div>
+    <div class="item" style="align-self: flex-end;"></div>
+  </div>
+  <div class="container" style="display: flex;flex-wrap: wrap;">
+    <div style="display: flex;flex-basis: 100%;justify-content: space-between;">
+      <div class="item "></div>
+      <div class="item"></div>
+    </div>
+    <div style="display: flex;flex-basis: 100%;justify-content: space-between;align-items: flex-end;">
+      <div class="item "></div>
+      <div class="item "></div>
+    </div>
+  </div>
+   
+   <div class="container" style="display: flex;flex-wrap: wrap;">
+     <div style="display: flex;flex-basis: 100%;justify-content: space-between;">
+       <div class="item "></div>
+       <div class="item"></div>
+     </div>
+     <div style="display: flex;flex-basis: 100%;justify-content: center;">
+       <div class="item "></div>
+     </div>
+     <div style="display: flex;flex-basis: 100%;justify-content: space-between;align-items: flex-end;">
+       <div class="item "></div>
+       <div class="item "></div>
+     </div>
+   </div>
+   <div class="container" style="display: flex;flex-wrap: wrap;">
+     <div style="display: flex;flex-basis: 100%;justify-content: space-between;">
+       <div class="item "></div>
+       <div class="item "></div>
+       <div class="item"></div>
+     </div>
+     <div style="display: flex;flex-basis: 100%;justify-content: space-between;align-items: flex-end;">
+       <div class="item "></div>
+       <div class="item "></div>
+       <div class="item "></div>
+     </div>
+   </div>
+</body>
+</html>
